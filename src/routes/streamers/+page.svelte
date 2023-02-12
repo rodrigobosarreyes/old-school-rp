@@ -1,9 +1,13 @@
 <script lang="ts">
+	import Table from "$lib/components/Table.svelte";
 	import type { PageServerData } from "./$types";
+	import type { Streamer } from "./streamers";
 
   export let data: PageServerData;
-  const { streamers } = data;
+  const streamers: Streamer[] = data.streamers;
   const portada = Math.floor(Math.random() * (streamers.length));
+  const columns = ['Username', 'Personaje', 'Rol'];
+  const rows = streamers;
 </script>
 
 <svelte:head>
@@ -25,7 +29,7 @@
   <!-- {#each streamers as streamer}
     {streamer.username}
   {/each} -->
-  {streamers[portada].username}
+  <Table columns={columns} rows={rows}></Table>
 
 </div>
 
