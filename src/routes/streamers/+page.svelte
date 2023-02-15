@@ -1,15 +1,19 @@
 <script lang="ts">
 	import Table from "$lib/components/Table.svelte";
+	import type { TableColumn } from "$lib/components/TableColumn";
 	import type { PageServerData } from "./$types";
-	import type { Streamer } from "./streamers";
+	import type { Streamer } from "./streamer";
 
   export let data: PageServerData;
   const streamers: Streamer[] = (data || {streamers: []}).streamers;
   const portada = Math.floor(Math.random() * (streamers.length));
-  const columns = [
+  const columns: TableColumn[] = [
     {name: 'Username', prop: 'username'}, 
-    {name: 'Personaje', prop: 'personaje'}, 
-    {name: 'Rol', prop: 'rol'}
+    {name: 'Personaje', prop: 'character'}, 
+    {name: 'Rol', prop: 'role'},
+    {name: 'Redes', prop: 'social'},
+    {name: 'Estado', prop: 'status'},
+    {name: 'Categoría', prop: 'category'},
   ];
   const rows = streamers;
 </script>
