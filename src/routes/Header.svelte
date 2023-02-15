@@ -24,6 +24,11 @@
         Servidor
       </a>
     </div>
+    <div class="nav-item">
+      <a href="https://oldschoolrp.tebex.io/" target="_blank" rel="noopener noreferrer">
+        Tienda
+      </a>
+    </div>
   </div>
 </header>
 

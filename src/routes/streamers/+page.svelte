@@ -4,9 +4,13 @@
 	import type { Streamer } from "./streamers";
 
   export let data: PageServerData;
-  const streamers: Streamer[] = data.streamers;
+  const streamers: Streamer[] = (data || {streamers: []}).streamers;
   const portada = Math.floor(Math.random() * (streamers.length));
-  const columns = ['Username', 'Personaje', 'Rol'];
+  const columns = [
+    {name: 'Username', prop: 'username'}, 
+    {name: 'Personaje', prop: 'personaje'}, 
+    {name: 'Rol', prop: 'rol'}
+  ];
   const rows = streamers;
 </script>
 
