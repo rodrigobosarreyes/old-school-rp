@@ -40,7 +40,7 @@ export async function GET() {
   const { data } = await response.json();
 
   data.forEach((element: any) => {
-    const s = streamersList.streamers.find(f => f.username === element.user_name);
+    const s = streamersList.streamers.find(f => f.username.toLowerCase() === element.user_login.toLowerCase());
     if (s) {
       s.status = true;
       s.category = element.game_name;
