@@ -6,7 +6,7 @@
 
   export let data: PageServerData;
   const streamers: Streamer[] = (data || {streamers: []}).streamers;
-  const portada = Math.floor(Math.random() * (streamers.length));
+
   const columns: TableColumn[] = [
     {name: 'Username', prop: 'username'}, 
     {name: 'Personaje', prop: 'character'}, 
@@ -16,6 +16,10 @@
     {name: 'Categoría', prop: 'category'},
   ];
   const rows = streamers;
+
+  const onlineStreamers = streamers.filter(s => s.status);
+  
+  const portada = Math.floor(Math.random() * (onlineStreamers.length));
 </script>
 
 <svelte:head>
@@ -27,18 +31,13 @@
   <div class="twitch-container">
     <iframe
       title="random"
-      src="https://player.twitch.tv/?autoplay=false&channel={streamers[portada].username}&parent=old-school-rp.vercel.app"
+      src="https://player.twitch.tv/?autoplay=false&channel={onlineStreamers[portada].username}&parent=old-school-rp.vercel.app"
       height="500"
       width="800"
       allowfullscreen>
     </iframe>
   </div>
-
-  <!-- {#each streamers as streamer}
-    {streamer.username}
-  {/each} -->
   <Table columns={columns} rows={rows}></Table>
-
 </div>
 
 <style>
