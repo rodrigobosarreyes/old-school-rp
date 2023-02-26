@@ -3,6 +3,45 @@
 
   export let columns: TableColumn[];
   export let rows: any[];
+
+  const sort = (col: TableColumn) => {
+    let order = 0;
+    if (col.sortOrder === 'asc') {
+      order = 1;
+      col.sortOrder = 'desc';
+    } else if (col.sortOrder === 'desc') {
+      order = -1;
+      col.sortOrder = 'asc';
+    } else {
+      return;
+    }
+  
+    const sortFunc = (a: any, b: any) => {
+      const critA = a[col.prop];
+      const critB = b[col.prop];
+
+      if (typeof critA === 'string' && typeof critB === 'string') {
+        return critA.localeCompare(critB) * order;
+      }
+
+      if (typeof critA === 'boolean' && typeof critB === 'boolean') {
+          if (critA === critB) {
+            return 0 * order;
+          }
+          if (critA) {
+            return -1 * order;
+          }
+          return 1 * order;
+      }
+
+      if (typeof critA.compareTo === 'function' && typeof critB.compareTo === 'function') {
+        return critA.compareTo(critB) * order;
+      }
+
+      return 0;
+    }
+    rows = rows.sort(sortFunc);
+  };
 </script>
 
 <div class="xdd">
@@ -11,7 +50,7 @@
       <thead>
         <tr>
           {#each columns as col}
-            <th>{col.name}</th>
+            <th class:sortable={col.sortOrder} on:click={() => sort(col)}>{col.name}</th>
           {/each}
         </tr>
       </thead>
@@ -71,4 +110,11 @@
     box-sizing: border-box;
   }
 
+  th {
+    cursor: default;
+  }
+
+  .sortable {
+    cursor: pointer;
+  }
 </style>
