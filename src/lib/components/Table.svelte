@@ -62,7 +62,9 @@
         {#each rows as row, i}
           <tr>
             {#each columns as col}
-              <td>{row[col.prop]}</td>
+              <td>
+                <slot name="rowCell" col={col} row={row}>{row[col.prop]}</slot>
+              </td>
             {/each}
           </tr>
         {/each}

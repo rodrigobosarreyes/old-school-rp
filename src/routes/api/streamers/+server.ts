@@ -10,23 +10,29 @@ export async function GET() {
       {username: 'Kotercillo', character: 'Bob Harris', role: 'Banda', status: false},
       {username: 'bytraap', character: 'John Park', role: 'Policía', status: false},
       {username: 'agoweno23', character: 'Joker', role: 'Civil', status: false},
-      {username: 'chusoO', character: 'Enzo Bonelli', role: 'Banda', status: false},
-      {username: 'minibaeee', character: 'Cora Fernández', role: 'Civil', status: false},
-      {username: 'JustTeer', character: 'Ygritte Scott', role: 'Banda', status: false},
-      {username: 'destrucjr', character: 'Jim Jhonson', role: 'Banda', status: false},
+      {username: 'chusoO', character: 'Enzo Bonelli', role: 'Mafia', status: false},
+      {username: 'minibaeee', character: 'Alina Atayan', role: 'Civil', status: false},
+      {username: 'JustTeer', character: 'Jahzira Wayne', role: 'Banda', status: false},
+      {username: 'destrucjr', character: 'Axel Anderson', role: 'Banda', status: false},
       {username: 'sir_ragot', character: 'Santiago Bedoya', role: 'Civil', status: false},
       {username: 'ExcoJM', character: 'Samuel Fernández', role: 'Civil', status: false},
-      {username: 'TomateKing', character: 'Yeray Fernández', role: 'Civil', status: false},
+      {username: 'TomateKing', character: 'Rafael Atayan', role: 'Civil', status: false},
       {username: 'ElAguaLimon', character: 'Wang Zhao', role: 'Banda', status: false},
       {username: 'LoreenLynx', character: 'Anya Watson', role: 'Civil', status: false},
       {username: 'Clottay', character: 'Thalía Fernández', role: 'Civil', status: false},
-      {username: 'CarmelaCruz1997', character: 'Shui Liu', role: 'Banda', status: false},
+      {username: 'CarmelaCruz1997', character: 'Paca', role: 'Banda', status: false},
       {username: 'Superchincheta', character: 'Kun Li', role: 'Banda', status: false},
       {username: 'orsson', character: 'Oniel', role: 'Banda', status: false},
       {username: 'Rian_Kyou', character: 'Ema', role: 'Mafia', status: false},
       {username: 'CamareroRp', character: 'Big Jeff', role: 'Banda', status: false},
       {username: 'Beikka', character: 'Sidney Moore', role: 'Policía', status: false},
       {username: 'ivanjoyitas_', character: 'Iván Joyitas', role: 'Civil', status: false},
+      {username: 'auma_93', character: 'Michelle', role: 'Policía', status: false},
+      {username: 'Hacdcenar', character: 'Nadia Atayan', role: 'Civil', status: false},
+      {username: 'bichadelcampo', character: 'Lola Atayan', role: 'Civil', status: false},
+      {username: 'anitalobita', character: 'Lumi', role: 'Civil', status: false},
+      {username: 'merchita15', character: 'Tanushka', role: 'Civil', status: false},
+      {username: 'lilxandrago', character: 'Isabella Jaramillo', role: 'Civil', status: false},
     ] as Streamer[]
   };
 
@@ -49,6 +55,10 @@ export async function GET() {
       s.status = true;
       s.category = element.game_name;
     }
+  });
+
+  streamersList.streamers.sort((a: Streamer, b: Streamer) => {
+    return a.username.localeCompare(b.username);
   });
 
   streamersList.streamers.sort((a: Streamer, b: Streamer) => {

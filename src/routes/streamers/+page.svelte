@@ -39,7 +39,15 @@
       allowfullscreen
     ></iframe>
   </div>
-  <Table columns={columns} rows={rows}></Table>
+  <Table columns={columns} rows={rows}>
+    <div slot="rowCell" let:col let:row>
+      {#if col.name === 'Username'}
+        <a href="https://www.twitch.com/{row[col.prop]}" target="_blank" rel="noopener noreferrer">{row[col.prop]}</a>
+      {:else}
+        {row[col.prop]}
+      {/if}
+    </div>
+  </Table>
 </div>
 
 <style>
