@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge } from './sveltestrapdeps';
+  import { Badge } from 'sveltestrap/src';
 	import Table from "$lib/components/Table.svelte";
 	import type { TableColumn } from "$lib/components/TableColumn";
 	import type { PageServerData } from "./$types";
@@ -10,10 +10,10 @@
 
   const columns: TableColumn[] = [
     {name: 'Username', prop: 'username', sortOrder: 'asc'}, 
+    {name: 'Estado', prop: 'status', sortOrder: 'asc'},
     {name: 'Personaje', prop: 'character', sortOrder: 'asc'}, 
     {name: 'Rol', prop: 'role', sortOrder: 'asc'},
     {name: 'Redes', prop: 'social'},
-    {name: 'Estado', prop: 'status', sortOrder: 'asc'},
     {name: 'Categoría', prop: 'category', sortOrder: 'asc'},
   ];
   const rows = streamers;
@@ -55,7 +55,7 @@
           <Badge style="font-size: 13px;" pill color='secondary'>Offline <i class="bi bi-camera-video-off-fill"></i></Badge>
         {/if}
       {:else}
-        <span>{value}</span>
+        <span>{#if value}{value}{/if}</span>
       {/if}
     </div>
   </Table>
