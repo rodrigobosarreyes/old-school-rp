@@ -63,7 +63,7 @@
           <tr>
             {#each columns as col}
               <td>
-                <slot name="rowCell" col={col} row={row}>{row[col.prop]}</slot>
+                <slot name="rowCell" col={col} row={row} value={row[col.prop]}>{row[col.prop]}</slot>
               </td>
             {/each}
           </tr>
@@ -82,10 +82,12 @@
     table-layout: fixed;
   }
   .tbl-header{
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgb(77, 77, 77);
+    position: sticky;
+    top: 0;
   }
   .tbl-content{
-    height:300px;
+    height:100vh;
     overflow-x:auto;
     margin-top: 0px;
     border: 1px solid rgba(255,255,255,0.3);

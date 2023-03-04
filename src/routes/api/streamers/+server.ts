@@ -23,7 +23,7 @@ export async function GET() {
       {username: 'CarmelaCruz1997', character: 'Paca', role: 'Banda', status: false},
       {username: 'Superchincheta', character: 'Kun Li', role: 'Banda', status: false},
       {username: 'orsson', character: 'Oniel', role: 'Banda', status: false},
-      {username: 'Rian_Kyou', character: 'Ema', role: 'Mafia', status: false},
+      {username: 'Rian_Kyou', character: 'Ema Bonelli', role: 'Mafia', status: false},
       {username: 'CamareroRp', character: 'Big Jeff', role: 'Banda', status: false},
       {username: 'Beikka', character: 'Sidney Moore', role: 'Policía', status: false},
       {username: 'ivanjoyitas_', character: 'Iván Joyitas', role: 'Civil', status: false},
@@ -33,6 +33,10 @@ export async function GET() {
       {username: 'anitalobita', character: 'Lumi', role: 'Civil', status: false},
       {username: 'merchita15', character: 'Tanushka', role: 'Civil', status: false},
       {username: 'lilxandrago', character: 'Isabella Jaramillo', role: 'Civil', status: false},
+      {username: 'jjsempere123', character: 'Carlberg', role: 'Civil', status: false},
+      {username: 'MeTocasLos', character: 'Patrik', role: 'Civil', status: false},
+      {username: 'Lryn9', character: 'Guzmán', role: 'Policía', status: false},
+      {username: '3LMoha', character: 'Huang Lee', role: 'Banda', status: false},
     ] as Streamer[]
   };
 
