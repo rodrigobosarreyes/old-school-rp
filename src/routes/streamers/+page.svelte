@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge } from 'sveltestrap/src';
+  import { Badge, Icon } from 'sveltestrap/src';
 	import Table from "$lib/components/Table.svelte";
 	import type { TableColumn } from "$lib/components/TableColumn";
 	import type { PageServerData } from "./$types";
@@ -28,7 +28,6 @@
 <svelte:head>
 	<title>OldSchoolRP - Streamers</title>
 	<meta name="description" content="OldSchoolRP Streamers" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
 </svelte:head>
 
 <div>
@@ -50,9 +49,22 @@
         </a>
       {:else if col.name === 'Estado'}
         {#if value}
-          <Badge style="font-size: 13px;" pill color='danger'>Live <i class="bi bi-camera-video-fill"></i></Badge>
+          <Badge style="font-size: 13px;" pill color='danger'>Live <Icon name="camera-video-fill" /></Badge>
         {:else}
-          <Badge style="font-size: 13px;" pill color='secondary'>Offline <i class="bi bi-camera-video-off-fill"></i></Badge>
+          <Badge style="font-size: 13px;" pill color='secondary'>Offline <Icon name="camera-video-off-fill"/></Badge>
+        {/if}
+      {:else if col.name === 'Redes'}
+        {#if value?.instagram}
+          <a href ={value.instagram} target="_blank" rel="noopener noreferrer"><Icon name="instagram" /></a>
+        {/if}
+        {#if value?.twitter}
+          <a href ={value.twitter} target="_blank" rel="noopener noreferrer"><Icon name="twitter"/></a>
+        {/if}
+        {#if value?.youtube}
+          <a href ={value.youtube} target="_blank" rel="noopener noreferrer"><Icon name="youtube"/></a>
+        {/if}
+        {#if value?.tiktok}
+          <a href ={value.tiktok} target="_blank" rel="noopener noreferrer"><Icon name="tiktok"/></a>
         {/if}
       {:else}
         <span>{#if value}{value}{/if}</span>
