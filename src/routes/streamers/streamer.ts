@@ -1,6 +1,8 @@
 export interface SocialMedia {
-  twitch: string;
-  twitter: string;
+  instagram?: string;
+  twitter?: string;
+  youtube?: string;
+  tiktok?: string;
 }
 
 export interface Streamer {
