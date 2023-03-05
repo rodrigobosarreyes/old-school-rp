@@ -80,11 +80,14 @@
   table{
     width:100%;
     table-layout: fixed;
+    font-size: 18px;
   }
   .tbl-header{
     background-color: rgb(77, 77, 77);
     position: sticky;
     top: 0;
+    font-size: 20px;
+    font-weight: bold;
   }
   .tbl-content{
     height:100vh;
@@ -96,7 +99,6 @@
     padding: 20px 15px;
     text-align: left;
     font-weight: 500;
-    font-size: 12px;
     color: #fff;
     text-transform: uppercase;
   }
@@ -105,7 +107,6 @@
     text-align: left;
     vertical-align:middle;
     font-weight: 300;
-    font-size: 12px;
     color: #fff;
     border-bottom: solid 1px rgba(255,255,255,0.1);
   }

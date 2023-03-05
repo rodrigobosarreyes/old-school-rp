@@ -55,16 +55,16 @@
         {/if}
       {:else if col.name === 'Redes'}
         {#if value?.instagram}
-          <a href ={value.instagram} target="_blank" rel="noopener noreferrer"><Icon name="instagram" /></a>
+          <a class="icon" href ={value.instagram} target="_blank" rel="noopener noreferrer"><Icon name="instagram" /></a>
         {/if}
         {#if value?.twitter}
-          <a href ={value.twitter} target="_blank" rel="noopener noreferrer"><Icon name="twitter"/></a>
+          <a class="icon" href ={value.twitter} target="_blank" rel="noopener noreferrer"><Icon name="twitter"/></a>
         {/if}
         {#if value?.youtube}
-          <a href ={value.youtube} target="_blank" rel="noopener noreferrer"><Icon name="youtube"/></a>
+          <a class="icon" href ={value.youtube} target="_blank" rel="noopener noreferrer"><Icon name="youtube"/></a>
         {/if}
         {#if value?.tiktok}
-          <a href ={value.tiktok} target="_blank" rel="noopener noreferrer"><Icon name="tiktok"/></a>
+          <a class="icon" href ={value.tiktok} target="_blank" rel="noopener noreferrer"><Icon name="tiktok"/></a>
         {/if}
       {:else}
         <span>{#if value}{value}{/if}</span>
@@ -91,6 +91,11 @@
 
   .streamer-username span {
     padding-left: 10px;
-    font-size: 16px;
+    font-size: 18px;
+  }
+
+  .icon {
+    font-size: 21px;
+    padding-right: 5px;
   }
 </style>

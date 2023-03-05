@@ -36,6 +36,7 @@
   header {
     display: flex;
     align-items: center;
+    background-color: #1e1e21;
   }
 
   .nav-content {
@@ -45,25 +46,24 @@
   }
 
   .logo {
+    padding: 10px;
     border-radius: 50%;
-    width: 150px;
-
+    width: 100px;
   }
 
   .nav-item {
-    font-family: 'Bungee Shade', cursive;
+    font-family: 'Tilt Warp', cursive;
     font-size: 42px;
+    color: white;
   }
 
   .nav-item:hover {
-    /* color: white; */
-    /* background-color: red; */
-    color: red;
+    color: #bf8a94;
     cursor: pointer;
   }
 
   .active {
-    color: red;
+    color: #ed334f;
   }
 
   a {
