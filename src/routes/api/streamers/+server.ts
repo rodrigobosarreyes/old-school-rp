@@ -38,6 +38,7 @@ export async function GET() {
       {username: 'Lryn9', character: 'Guzmán', role: 'Policía', status: false, social: {twitter: 'https://twitter.com/Lryn999'}},
       {username: '3LMoha', character: 'Huang Lee', role: 'Banda', status: false, social: {twitter: 'https://twitter.com/3LM0HA', instagram: 'https://www.instagram.com/3lm0ha/', youtube: 'https://www.youtube.com/channel/UCWgmUQIUTgOkdhfOjPkLxsA', tiktok: 'https://www.tiktok.com/@3lmoha'}},
       {username: 'wachinanii', character: 'Ananias Atayan', role: 'Civil', status: false, social: {twitter: 'https://twitter.com/twitchwachinani', youtube: 'https://www.youtube.com/channel/UCCowwOx0s6RDZm6_k3dWidQ'}},
+      {username: 'destructorhell', character: 'Ralph Beekhof', role: 'Civil', status: false, social: {tiktok: 'https://www.tiktok.com/@destructorhell'}},
     ] as Streamer[]
   };
 
