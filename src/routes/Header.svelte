@@ -8,10 +8,8 @@
   onMount(() => url = window.location.href);
 </script>
 
-<header>
-  <a href="/">
-    <img src={logo} alt="OldSchoolRP" class="logo">  
-  </a>
+<header></header>
+<div class="header">
 
   <div class="nav-content">
     <div class="nav-item">
@@ -30,13 +28,20 @@
       </a>
     </div>
   </div>
-</header>
+</div>
 
 <style>
-  header {
+  .header {
     display: flex;
     align-items: center;
-    background-color: #1e1e21;
+    background-color: #07040d;
+  }
+  header {
+    background-image: url('$lib/images/header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
   }
 
   .nav-content {
