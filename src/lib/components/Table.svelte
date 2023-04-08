@@ -80,20 +80,20 @@
   table{
     width:100%;
     table-layout: fixed;
-    font-size: 18px;
   }
   .tbl-header{
-    background-color: rgb(77, 77, 77);
+    background-color: black;
     position: sticky;
     top: 0;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
+    border-radius: 10px 10px 0 0;
   }
   .tbl-content{
     height:100vh;
     overflow-x:auto;
     margin-top: 0px;
-    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 0 0 10px 10px;
   }
   th{
     padding: 20px 15px;
@@ -101,6 +101,7 @@
     font-weight: 500;
     color: #fff;
     text-transform: uppercase;
+    border-bottom: solid 1px rgba(255,255,255,0.3);
   }
   td{
     padding: 15px;
@@ -108,7 +109,7 @@
     vertical-align:middle;
     font-weight: 300;
     color: #fff;
-    border-bottom: solid 1px rgba(255,255,255,0.1);
+    border-bottom: solid 1px rgba(255,255,255,0.3);
   }
 
   div {

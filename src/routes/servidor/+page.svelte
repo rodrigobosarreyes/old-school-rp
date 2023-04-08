@@ -8,9 +8,11 @@
 </svelte:head>
 
 <div>
-  <h1>Servidor</h1>
+  <h1>WIP</h1>
 </div>
 
 <style>
-  
+	h1 {
+		color: white;
+	}
 </style>

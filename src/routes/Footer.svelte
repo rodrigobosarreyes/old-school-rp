@@ -1,3 +1,19 @@
 <footer>
-    <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+    <p>
+        Hecho por <a href="https://rodrigobosarreyes.github.io/">Rodrigo Bosarreyes</a> con mucho ❤️ para <b>Old School RP</b>
+    </p>
 </footer>
+
+<style>
+    a {
+        color: #bf8a94;
+    }
+    footer {
+        margin-top: 2em;
+        padding: 1em;
+        font-size: 12px;
+        background: black;
+        text-align: center;
+        color: white;
+    }
+</style>

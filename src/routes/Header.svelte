@@ -2,6 +2,7 @@
   import logo from '$lib/images/logo.jpg';
   import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { Icon } from 'sveltestrap';
 
   let url = ``;
 
@@ -25,6 +26,7 @@
     <div class="nav-item">
       <a href="https://oldschoolrp.tebex.io/" target="_blank" rel="noopener noreferrer">
         Tienda
+        <Icon name="box-arrow-up-right" style="font-size: 18px; vertical-align: middle;"/>
       </a>
     </div>
   </div>
@@ -34,7 +36,7 @@
   .header {
     display: flex;
     align-items: center;
-    background-color: #07040d;
+    background-color: transparent;
   }
   header {
     background-image: url('$lib/images/header.jpg');
@@ -48,12 +50,6 @@
     display: flex;
     justify-content: space-evenly;
     flex-basis: 100%;
-  }
-
-  .logo {
-    padding: 10px;
-    border-radius: 50%;
-    width: 100px;
   }
 
   .nav-item {

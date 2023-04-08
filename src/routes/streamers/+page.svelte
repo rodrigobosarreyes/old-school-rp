@@ -40,43 +40,52 @@
       allowfullscreen
     ></iframe>
   </div>
-  <Table columns={columns} rows={rows}>
-    <div slot="rowCell" let:col let:value>
-      {#if col.name === 'Username'}
-        <a href="https://www.twitch.com/{value}" target="_blank" rel="noopener noreferrer" class="streamer-username">
-          <img src="icons/{value}.png" alt="{value}">
-          <span>{value}</span>
-        </a>
-      {:else if col.name === 'Estado'}
-        {#if value}
-          <Badge style="font-size: 13px;" pill color='danger'>Live <Icon name="camera-video-fill" /></Badge>
+  <div class="table-container">
+    <Table columns={columns} rows={rows}>
+      <div slot="rowCell" let:col let:value>
+        {#if col.name === 'Username'}
+          <a href="https://www.twitch.com/{value}" target="_blank" rel="noopener noreferrer" class="streamer-username">
+            <img src="icons/{value}.png" alt="{value}">
+            <span>{value}</span>
+          </a>
+        {:else if col.name === 'Estado'}
+          {#if value}
+            <Badge style="font-size: 13px;" pill color='danger'>Live <Icon name="camera-video-fill" /></Badge>
+          {:else}
+            <Badge style="font-size: 13px;" pill color='secondary'>Offline <Icon name="camera-video-off-fill"/></Badge>
+          {/if}
+        {:else if col.name === 'Redes'}
+          {#if value?.instagram}
+            <a class="icon" href ={value.instagram} target="_blank" rel="noopener noreferrer"><Icon name="instagram" /></a>
+          {/if}
+          {#if value?.twitter}
+            <a class="icon" href ={value.twitter} target="_blank" rel="noopener noreferrer"><Icon name="twitter"/></a>
+          {/if}
+          {#if value?.youtube}
+            <a class="icon" href ={value.youtube} target="_blank" rel="noopener noreferrer"><Icon name="youtube"/></a>
+          {/if}
+          {#if value?.tiktok}
+            <a class="icon" href ={value.tiktok} target="_blank" rel="noopener noreferrer"><Icon name="tiktok"/></a>
+          {/if}
         {:else}
-          <Badge style="font-size: 13px;" pill color='secondary'>Offline <Icon name="camera-video-off-fill"/></Badge>
+          <span>{#if value}{value}{/if}</span>
         {/if}
-      {:else if col.name === 'Redes'}
-        {#if value?.instagram}
-          <a class="icon" href ={value.instagram} target="_blank" rel="noopener noreferrer"><Icon name="instagram" /></a>
-        {/if}
-        {#if value?.twitter}
-          <a class="icon" href ={value.twitter} target="_blank" rel="noopener noreferrer"><Icon name="twitter"/></a>
-        {/if}
-        {#if value?.youtube}
-          <a class="icon" href ={value.youtube} target="_blank" rel="noopener noreferrer"><Icon name="youtube"/></a>
-        {/if}
-        {#if value?.tiktok}
-          <a class="icon" href ={value.tiktok} target="_blank" rel="noopener noreferrer"><Icon name="tiktok"/></a>
-        {/if}
-      {:else}
-        <span>{#if value}{value}{/if}</span>
-      {/if}
-    </div>
-  </Table>
+      </div>
+    </Table>
+  </div>
 </div>
 
 <style>
   .twitch-container {
     display: flex;
     justify-content: center;
+    margin: 2em 0;
+  }
+  .table-container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
   }
   a {
     color: inherit;
@@ -85,17 +94,16 @@
   }
   .streamer-username img {
     border-radius: 50%;
-    width: 64px;
-    height: 64px;
+    width: 40px;
+    height: 40px;
   }
 
   .streamer-username span {
     padding-left: 10px;
-    font-size: 18px;
   }
 
   .icon {
-    font-size: 21px;
+    font-size: 18px;
     padding-right: 5px;
   }
 </style>
