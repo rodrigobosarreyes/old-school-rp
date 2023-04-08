@@ -39,6 +39,19 @@
       width="800"
       allowfullscreen
     ></iframe>
+    <div class="ttv-detail">
+      <div class="ttv-container">
+        <div class="ttv-username">
+          <a href="https://www.twitch.com/{streamerPortada.username}" target="_blank" rel="noopener noreferrer" class="streamer-username">
+            {streamerPortada.username}
+          </a>
+          <img src="icons/{streamerPortada.username}.png" alt="{streamerPortada.username}">
+        </div>
+        <div class="ttv-character">
+          {streamerPortada.character} ({streamerPortada.role})
+        </div>
+      </div>
+    </div>
   </div>
   <div class="table-container">
     <Table columns={columns} rows={rows}>
@@ -76,6 +89,22 @@
 </div>
 
 <style>
+  .ttv-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: white;
+  }
+  .ttv-container {
+    background-color: black;
+    padding: 25px 40px;
+    border-radius: 0 40px 40px 0;
+  }
+  .ttv-detail .ttv-username {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
   .twitch-container {
     display: flex;
     justify-content: center;
@@ -92,7 +121,8 @@
     text-decoration: none;
     font-weight: bold;
   }
-  .streamer-username img {
+  .streamer-username img,
+  .ttv-username img {
     border-radius: 50%;
     width: 40px;
     height: 40px;

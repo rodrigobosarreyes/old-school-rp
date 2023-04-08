@@ -1,5 +1,4 @@
 <script>
-  import logo from '$lib/images/logo.jpg';
   import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { Icon } from 'sveltestrap';

@@ -8,7 +8,7 @@ export async function GET() {
       {username: 'el_alemanrp', character: 'Billy Barty', role: 'Civil', status: false, social: {twitter: 'https://twitter.com/ElAlemanRP', instagram: 'https://www.instagram.com/el_alemanrp'}},
       {username: 'Albiinya', character: 'África López', role: 'Civil', status: false},
       {username: 'Kotercillo', character: 'Bob Harris', role: 'Banda', status: false, social: {twitter: 'https://twitter.com/Kotercillo', }},
-      {username: 'bytraap', character: 'Drake king', role: 'Banda', status: false, social: {twitter: 'https://twitter.com/bytraap', instagram: 'https://www.instagram.com/bytraap'}},
+      {username: 'bytraap', character: 'Drake King', role: 'Banda', status: false, social: {twitter: 'https://twitter.com/bytraap', instagram: 'https://www.instagram.com/bytraap'}},
       {username: 'agoweno23', character: 'Joker', role: 'Civil', status: false, social: {twitter: 'https://twitter.com/agoweno23', tiktok: 'https://www.tiktok.com/@agoweno23'}},
       {username: 'chusoO', character: 'Enzo Bonelli', role: 'Mafia', status: false, social: {twitter: 'https://twitter.com/xchusoO'}},
       {username: 'minibaeee', character: 'La Kerry', role: 'Civil', status: false, social: {instagram: 'https://www.instagram.com/minibaeee', tiktok: 'https://www.tiktok.com/@minibaeeee'}},
