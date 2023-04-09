@@ -6,6 +6,11 @@
   export let rows: any[];
 
   const sort = (col: TableColumn) => {
+    columns.forEach(c => {
+      if (c.prop !== col.prop && c.sortOrder) {
+        c.sortOrder = 'asc';
+      }
+    });
     let order = 0;
     if (col.sortOrder === 'asc') {
       order = 1;
