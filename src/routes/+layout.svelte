@@ -15,5 +15,7 @@
 </div>
 
 <style>
-
+	main {
+		min-height: calc(100vh - calc(400px + 63px + 58px + 24px));
+	}
 </style>

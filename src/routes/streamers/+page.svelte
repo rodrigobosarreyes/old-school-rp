@@ -10,9 +10,9 @@
 
   const columns: TableColumn[] = [
     {name: 'Username', prop: 'username', sortOrder: 'asc'}, 
-    {name: 'Estado', prop: 'status', sortOrder: 'asc'},
+    {name: 'Estado', prop: 'status', sortOrder: 'asc', minWidth: '150px', maxWidth: '150px', width: '150px'},
     {name: 'Personaje', prop: 'character', sortOrder: 'asc'}, 
-    {name: 'Rol', prop: 'role', sortOrder: 'asc'},
+    {name: 'Rol', prop: 'role', sortOrder: 'asc', minWidth: '150px', maxWidth: '150px', width: '150px'},
     {name: 'Redes', prop: 'social'},
     {name: 'Categoría', prop: 'category', sortOrder: 'asc'},
   ];
@@ -32,26 +32,29 @@
 
 <div>
   <div class="twitch-container">
-    <iframe
-      title="random"
-      src="https://player.twitch.tv/?autoplay=false&channel={streamerPortada.username}&parent=old-school-rp.vercel.app"
-      height="500"
-      width="800"
-      allowfullscreen
-    ></iframe>
-    <div class="ttv-detail">
-      <div class="ttv-container">
-        <div class="ttv-username">
-          <a href="https://www.twitch.com/{streamerPortada.username}" target="_blank" rel="noopener noreferrer" class="streamer-username">
-            {streamerPortada.username}
-          </a>
-          <img src="icons/{streamerPortada.username}.png" alt="{streamerPortada.username}">
-        </div>
-        <div class="ttv-character">
-          {streamerPortada.character} ({streamerPortada.role})
+    {#if streamerPortada}
+      <iframe
+        title="random"
+        src="https://player.twitch.tv/?autoplay=false&channel={streamerPortada.username}&parent=old-school-rp.vercel.app"
+        height="500"
+        width="800"
+        allowfullscreen
+      ></iframe>
+      <div class="ttv-detail">
+        <div class="ttv-container">
+          <div class="ttv-username">
+            <a href="https://www.twitch.com/{streamerPortada.username}" target="_blank" rel="noopener noreferrer" class="streamer-username">
+              {streamerPortada.username}
+            </a>
+            <img src="icons/{streamerPortada.username}.png" alt="{streamerPortada.username}">
+          </div>
+          <div class="ttv-character">
+            {streamerPortada.character} ({streamerPortada.role})
+          </div>
         </div>
       </div>
-    </div>
+    {/if}
+    
   </div>
   <div class="table-container">
     <Table columns={columns} rows={rows}>
@@ -98,7 +101,7 @@
   .ttv-container {
     background-color: black;
     padding: 25px 40px;
-    border-radius: 0 40px 40px 0;
+    border-radius: 0 15px 15px 0;
   }
   .ttv-detail .ttv-username {
     font-size: 20px;

@@ -50,7 +50,11 @@
       <thead>
         <tr>
           {#each columns as col}
-            <th class:sortable={col.sortOrder} on:click={() => sort(col)}>{col.name}</th>
+            <th
+              style:minWidth={col.minWidth}
+              style:width={col.width}
+              style:maxWidth={col.maxWidth}
+              class:sortable={col.sortOrder} on:click={() => sort(col)}>{col.name}</th>
           {/each}
         </tr>
       </thead>
@@ -62,7 +66,11 @@
         {#each rows as row, i}
           <tr>
             {#each columns as col}
-              <td>
+              <td
+                style:minWidth={col.minWidth}
+                style:width={col.width}
+                style:maxWidth={col.maxWidth}
+              >
                 <slot name="rowCell" col={col} row={row} value={row[col.prop]}>{row[col.prop]}</slot>
               </td>
             {/each}
