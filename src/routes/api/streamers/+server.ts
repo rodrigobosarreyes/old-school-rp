@@ -5,7 +5,7 @@ export async function GET() {
   const token = 'uop5bbsdxtkml8nyxmbfcnhzzc35uk'
   const streamersList = {
     streamers: [
-      {username: 'el_alemanrp', character: 'Billy Barty', role: 'Civil', status: false, social: {twitter: 'https://twitter.com/ElAlemanRP', instagram: 'https://www.instagram.com/el_alemanrp'}},
+      {username: 'el_alemanrp', character: 'Billy Barty', role: 'Banda', status: false, social: {twitter: 'https://twitter.com/ElAlemanRP', instagram: 'https://www.instagram.com/el_alemanrp'}},
       {username: 'Albiinya', character: 'África López', role: 'Civil', status: false},
       {username: 'Kotercillo', character: 'Bob Harris', role: 'Banda', status: false, social: {twitter: 'https://twitter.com/Kotercillo', }},
       {username: 'bytraap', character: 'Drake King', role: 'Banda', status: false, social: {twitter: 'https://twitter.com/bytraap', instagram: 'https://www.instagram.com/bytraap'}},
