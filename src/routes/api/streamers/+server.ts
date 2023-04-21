@@ -2,7 +2,7 @@ import { json } from '@sveltejs/kit';
 import type { Streamer } from '../../streamers/streamer';
 
 export async function GET() {
-  const token = 'uop5bbsdxtkml8nyxmbfcnhzzc35uk'
+  const token = 'yqoxpq99zlu4qqajm02jcmacsrvmbe'
   const streamersList = {
     streamers: [
       {username: 'el_alemanrp', character: 'Billy Barty', role: 'Banda', status: false, social: {twitter: 'https://twitter.com/ElAlemanRP', instagram: 'https://www.instagram.com/el_alemanrp'}},
