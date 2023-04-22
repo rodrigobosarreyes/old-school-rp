@@ -1,10 +1,16 @@
 <script lang="ts">
-	import type { TableColumn } from "./TableColumn";
+	import { Icon } from "sveltestrap";
+  import type { TableColumn } from "./TableColumn";
 
   export let columns: TableColumn[];
   export let rows: any[];
 
   const sort = (col: TableColumn) => {
+    columns.forEach(c => {
+      if (c.prop !== col.prop && c.sortOrder) {
+        c.sortOrder = 'asc';
+      }
+    });
     let order = 0;
     if (col.sortOrder === 'asc') {
       order = 1;
@@ -15,6 +21,8 @@
     } else {
       return;
     }
+
+    columns = [...columns];
   
     const sortFunc = (a: any, b: any) => {
       const critA = a[col.prop];
@@ -54,7 +62,11 @@
               style:minWidth={col.minWidth}
               style:width={col.width}
               style:maxWidth={col.maxWidth}
-              class:sortable={col.sortOrder} on:click={() => sort(col)}>{col.name}</th>
+              class:sortable={col.sortOrder} on:click={() => sort(col)}>{col.name}
+              {#if col.sortOrder}
+                <Icon name={col.sortOrder === 'asc' ? 'caret-down-fill' : 'caret-up-fill'} />
+              {/if}
+            </th>
           {/each}
         </tr>
       </thead>
