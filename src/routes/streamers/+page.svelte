@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge, Icon, Tooltip, Button } from 'sveltestrap/src';
+  import { Badge, Icon, Tooltip, Button, ButtonGroup } from 'sveltestrap/src';
 	import Table from "$lib/components/Table.svelte";
 	import type { TableColumn } from "$lib/components/TableColumn";
 	import type { PageServerData } from "./$types";
@@ -16,13 +16,24 @@
     {name: 'Redes', prop: 'social'},
     {name: 'Categoría', prop: 'category', sortOrder: 'asc'},
   ];
-  const rows = streamers;
-
   const onlineStreamers = streamers.filter(s => s.status);
   
   const portada = Math.floor(Math.random() * (onlineStreamers.length));
 
   const streamerPortada = onlineStreamers.length > 0 ? onlineStreamers[portada] : streamers[Math.floor(Math.random() * (streamers.length))];
+  let rows = [...streamers];
+
+  const onClickRoleFilter = (rol: string) => {
+    rows = streamers.filter(s => s.role === rol);
+  }
+
+  const onClickLiveFilter = () => {
+    rows = streamers.filter(s => s.status);
+  }
+
+  const onClickFilterAll = () => {
+    rows = [...streamers];
+  }
 </script>
 
 <svelte:head>
@@ -58,10 +69,15 @@
       </div>
     {/if}
   </div>
-  <Button color='primary'>En vivo</Button>
-  <Button color='primary'>Banda</Button>
-  <Button color='primary'>Civil</Button>
-  <Button color='primary'>Policía</Button>
+  <div style="margin: 10px 10%;">
+    <ButtonGroup>
+      <Button outline color='secondary' on:click={() => onClickLiveFilter()}>En vivo</Button>
+      <Button outline color='secondary' on:click={() => onClickRoleFilter('Banda')}>Banda</Button>
+      <Button outline color='secondary' on:click={() => onClickRoleFilter('Civil')}>Civil</Button>
+      <Button outline color='secondary' on:click={() => onClickRoleFilter('Policía')}>Policía</Button>
+      <Button outline active color='secondary' on:click={onClickFilterAll}>Todos</Button>
+    </ButtonGroup>
+  </div>
   <div class="table-container">
     <Table columns={columns} rows={rows}>
       <div slot="rowCell" let:col let:value>
@@ -145,4 +161,18 @@
     font-size: 18px;
     padding-right: 5px;
   }
+
+
+  :global(.btn-outline-secondary) {
+    border-color: #ed334f !important;
+    color: #ed334f;
+  }
+
+  :global(.btn-outline-secondary.active),
+  :global(.btn-outline-secondary:active),
+  :global(.btn-outline-secondary:hover) {
+    background-color: #ed334f !important;
+    color: white;
+  }
+
 </style>
