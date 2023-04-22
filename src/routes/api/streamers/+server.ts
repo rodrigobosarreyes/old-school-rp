@@ -5,7 +5,7 @@ export async function GET() {
   const token = 'uop5bbsdxtkml8nyxmbfcnhzzc35uk'
   const streamersList = {
     streamers: [
-      {username: 'el_alemanrp', character: 'Billy Barty', role: 'Civil', status: false, social: {twitter: 'https://twitter.com/ElAlemanRP', instagram: 'https://www.instagram.com/el_alemanrp'}},
+      {username: 'el_alemanrp', character: 'Billy Barty', role: 'Banda', status: false, social: {twitter: 'https://twitter.com/ElAlemanRP', instagram: 'https://www.instagram.com/el_alemanrp'}, banda: 'Armenios'},
       {username: 'Albiinya', character: 'África López', role: 'Civil', status: false},
       {username: 'Kotercillo', character: 'Bob Harris', role: 'Banda', status: false, social: {twitter: 'https://twitter.com/Kotercillo', }},
       {username: 'bytraap', character: 'Drake King', role: 'Banda', status: false, social: {twitter: 'https://twitter.com/bytraap', instagram: 'https://www.instagram.com/bytraap'}},
@@ -38,7 +38,10 @@ export async function GET() {
       {username: '3LMoha', character: 'Karim', role: 'Civil', status: false, social: {twitter: 'https://twitter.com/3LM0HA', instagram: 'https://www.instagram.com/3lm0ha/', youtube: 'https://www.youtube.com/channel/UCWgmUQIUTgOkdhfOjPkLxsA', tiktok: 'https://www.tiktok.com/@3lmoha'}},
       {username: 'wachinanii', character: 'Ananias Atayan', role: 'Civil', status: false, social: {twitter: 'https://twitter.com/twitchwachinani', youtube: 'https://www.youtube.com/channel/UCCowwOx0s6RDZm6_k3dWidQ'}},
       {username: 'destructorhell', character: 'Michael Sallow', role: 'Civil', status: false, social: {tiktok: 'https://www.tiktok.com/@destructorhell'}},
-      {username: 'Mon0nuke', character: 'Aileen Connor', role: 'Civil', status: false},
+      {username: 'Mon0nuke', character: 'Morgana', role: 'Civil', status: false},
+      {username: 'Mamenna', character: 'Nahia Belfort', role: 'Civil', status: false, social: { instagram: 'https://www.instagram.com/mamennaway/'}},
+      {username: 'lobo_roleplay', character: 'Monkey', role: 'Banda', status: false, social: { instagram: 'https://www.instagram.com/lobo_rolplay/', twitter: 'https://twitter.com/druidayt'}, banda: 'Hustler Crips'},
+      {username: 'zeusdelizzia', character: 'Leonardo Russo', role: 'Policía', status: false, social: { instagram: 'https://www.instagram.com/zeusdelizzia/', twitter: 'https://twitter.com/ZeusValenciano'}},
     ] as Streamer[]
   };
 

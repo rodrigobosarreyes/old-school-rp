@@ -12,4 +12,5 @@ export interface Streamer {
   social?: SocialMedia;
   status?: boolean;
   category?: string;
+  banda?: string;
 }

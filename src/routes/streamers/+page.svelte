@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge, Icon } from 'sveltestrap/src';
+  import { Badge, Icon, Tooltip, Button } from 'sveltestrap/src';
 	import Table from "$lib/components/Table.svelte";
 	import type { TableColumn } from "$lib/components/TableColumn";
 	import type { PageServerData } from "./$types";
@@ -49,13 +49,19 @@
             <img src="icons/{streamerPortada.username}.png" alt="{streamerPortada.username}">
           </div>
           <div class="ttv-character">
-            {streamerPortada.character} ({streamerPortada.role})
+            {streamerPortada.character} <span id="ttv-detail__role" class="cursor-default">({streamerPortada.role})</span>
+            {#if streamerPortada.banda}
+              <Tooltip target="ttv-detail__role" placement="bottom">{streamerPortada.banda}</Tooltip>
+            {/if}
           </div>
         </div>
       </div>
     {/if}
-    
   </div>
+  <Button color='primary'>En vivo</Button>
+  <Button color='primary'>Banda</Button>
+  <Button color='primary'>Civil</Button>
+  <Button color='primary'>Policía</Button>
   <div class="table-container">
     <Table columns={columns} rows={rows}>
       <div slot="rowCell" let:col let:value>
