@@ -4,6 +4,7 @@
 	import type { TableColumn } from "$lib/components/TableColumn";
 	import type { PageServerData } from "./$types";
 	import type { Streamer } from "./streamer";
+	import OsButtonGroup from '$lib/components/OsButtonGroup.svelte';
 
   export let data: PageServerData;
   const streamers: Streamer[] = (data || {streamers: []}).streamers;
@@ -27,11 +28,13 @@
     rows = streamers.filter(s => s.role === rol);
   }
 
-  const onClickLiveFilter = () => {
+  const onClickLiveFilter = (evt: any) => {
+    console.log(evt);
     rows = streamers.filter(s => s.status);
   }
 
-  const onClickFilterAll = () => {
+  const onClickFilterAll = (evt: any) => {
+    console.log(evt);
     rows = [...streamers];
   }
 </script>
@@ -70,13 +73,15 @@
     {/if}
   </div>
   <div style="margin: 10px 10%;">
-    <ButtonGroup>
-      <Button outline color='secondary' on:click={() => onClickLiveFilter()}>En vivo</Button>
-      <Button outline color='secondary' on:click={() => onClickRoleFilter('Banda')}>Banda</Button>
-      <Button outline color='secondary' on:click={() => onClickRoleFilter('Civil')}>Civil</Button>
-      <Button outline color='secondary' on:click={() => onClickRoleFilter('Policía')}>Policía</Button>
-      <Button outline active color='secondary' on:click={onClickFilterAll}>Todos</Button>
-    </ButtonGroup>
+    <OsButtonGroup 
+      activeBtn="all"
+      buttons={[
+        {id: 'live', label: 'En vivo', onClick: onClickLiveFilter},
+        {id: 'banda', label: 'Banda', onClick: () => onClickRoleFilter('Banda')},
+        {id: 'civil', label: 'Civil', onClick: () => onClickRoleFilter('Civil')},
+        {id: 'police', label: 'Policía', onClick: () => onClickRoleFilter('Policía')},
+        {id: 'all', label: 'Todos', onClick: onClickFilterAll, active: true},
+      ]}></OsButtonGroup>
   </div>
   <div class="table-container">
     <Table columns={columns} rows={rows}>
@@ -160,19 +165,6 @@
   .icon {
     font-size: 18px;
     padding-right: 5px;
-  }
-
-
-  :global(.btn-outline-secondary) {
-    border-color: #ed334f !important;
-    color: #ed334f;
-  }
-
-  :global(.btn-outline-secondary.active),
-  :global(.btn-outline-secondary:active),
-  :global(.btn-outline-secondary:hover) {
-    background-color: #ed334f !important;
-    color: white;
   }
 
 </style>
