@@ -85,12 +85,17 @@
   </div>
   <div class="table-container">
     <Table columns={columns} rows={rows}>
-      <div slot="rowCell" let:col let:value>
+      <div slot="rowCell" let:col let:value let:row>
         {#if col.name === 'Username'}
           <a href="https://www.twitch.com/{value}" target="_blank" rel="noopener noreferrer" class="streamer-username">
             <img src="icons/{value}.png" alt="{value}">
             <span>{value}</span>
           </a>
+        {:else if col.name === 'Rol'}
+          <span id={col.name + row.username} class="cursor-default">{value}</span>
+          {#if row.banda}
+            <Tooltip target={col.name + row.username} placement="bottom">{row.banda}</Tooltip>
+          {/if}
         {:else if col.name === 'Estado'}
           {#if value}
             <Badge style="font-size: 13px;" pill color='danger'>Live <Icon name="camera-video-fill" /></Badge>
@@ -118,7 +123,7 @@
   </div>
 </div>
 
-<style>
+<style lang="scss">
   .ttv-detail {
     display: flex;
     flex-direction: column;
@@ -130,10 +135,12 @@
     padding: 25px 40px;
     border-radius: 0 15px 15px 0;
   }
-  .ttv-detail .ttv-username {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
+  .ttv-detail {
+    .ttv-username {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
   }
   .twitch-container {
     display: flex;

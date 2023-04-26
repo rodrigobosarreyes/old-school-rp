@@ -110,7 +110,7 @@
     border-radius: 10px 10px 0 0;
   }
   .tbl-content{
-    height:100vh;
+    max-height:100vh;
     overflow-x:auto;
     margin-top: 0px;
     border-radius: 0 0 10px 10px;
